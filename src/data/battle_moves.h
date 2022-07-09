@@ -1719,7 +1719,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_CONSTRICT] =
     {
         .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 10,
+        .power = 30,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 35,
