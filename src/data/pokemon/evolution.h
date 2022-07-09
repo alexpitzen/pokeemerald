@@ -32,7 +32,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_VULPIX]                = {{EVO_ITEM, ITEM_FIRE_STONE, SPECIES_NINETALES}},
     [SPECIES_JIGGLYPUFF]            = {{EVO_ITEM, ITEM_MOON_STONE, SPECIES_WIGGLYTUFF}},
     [SPECIES_ZUBAT]                 = {{EVO_LEVEL, 22, SPECIES_GOLBAT}},
-    [SPECIES_GOLBAT]                = {{EVO_FRIENDSHIP, 0, SPECIES_CROBAT}},
+    [SPECIES_GOLBAT]                = {{EVO_LEVEL, 22, SPECIES_CROBAT}},
     [SPECIES_ODDISH]                = {{EVO_LEVEL, 21, SPECIES_GLOOM}},
     [SPECIES_GLOOM]                 = {{EVO_ITEM, ITEM_LEAF_STONE, SPECIES_VILEPLUME},
                                        {EVO_ITEM, ITEM_SUN_STONE, SPECIES_BELLOSSOM}},
@@ -88,7 +88,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_RHYDON]                = {{EVO_TRADE_ITEM, ITEM_PROTECTOR, SPECIES_RHYPERIOR}},
 #endif
-    [SPECIES_CHANSEY]               = {{EVO_FRIENDSHIP, 0, SPECIES_BLISSEY}},
+    [SPECIES_CHANSEY]               = {{EVO_LEVEL, 25, SPECIES_BLISSEY}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_TANGELA]               = {{EVO_MOVE, MOVE_ANCIENT_POWER, SPECIES_TANGROWTH}},
 #endif
@@ -108,8 +108,8 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_EEVEE]                 = {{EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_JOLTEON},
                                        {EVO_ITEM, ITEM_WATER_STONE, SPECIES_VAPOREON},
                                        {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_FLAREON},
-                                       {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
-                                       {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
+                                       {EVO_FRIENDSHIP, 0, SPECIES_ESPEON},
+                                       {EVO_LEVEL, 23, SPECIES_UMBREON}},
                                     #if P_GEN_4_POKEMON == TRUE
                                        {EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
                                        {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
@@ -139,10 +139,10 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LEDYBA]                = {{EVO_LEVEL, 18, SPECIES_LEDIAN}},
     [SPECIES_SPINARAK]              = {{EVO_LEVEL, 22, SPECIES_ARIADOS}},
     [SPECIES_CHINCHOU]              = {{EVO_LEVEL, 27, SPECIES_LANTURN}},
-    [SPECIES_PICHU]                 = {{EVO_FRIENDSHIP, 0, SPECIES_PIKACHU}},
-    [SPECIES_CLEFFA]                = {{EVO_FRIENDSHIP, 0, SPECIES_CLEFAIRY}},
-    [SPECIES_IGGLYBUFF]             = {{EVO_FRIENDSHIP, 0, SPECIES_JIGGLYPUFF}},
-    [SPECIES_TOGEPI]                = {{EVO_FRIENDSHIP, 0, SPECIES_TOGETIC}},
+    [SPECIES_PICHU]      = {{EVO_LEVEL, 14, SPECIES_PIKACHU}},
+    [SPECIES_CLEFFA]     = {{EVO_LEVEL, 14, SPECIES_CLEFAIRY}},
+    [SPECIES_IGGLYBUFF]  = {{EVO_LEVEL, 14, SPECIES_JIGGLYPUFF}},
+    [SPECIES_TOGEPI]     = {{EVO_LEVEL, 16, SPECIES_TOGETIC}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_TOGETIC]               = {{EVO_ITEM, ITEM_SHINY_STONE, SPECIES_TOGEKISS}},
 #endif
@@ -249,7 +249,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                     #endif
                                        },
     [SPECIES_GLALIE]                = {{EVO_MEGA_EVOLUTION, ITEM_GLALITITE, SPECIES_GLALIE_MEGA}},
-    [SPECIES_AZURILL]               = {{EVO_FRIENDSHIP, 0, SPECIES_MARILL}},
+    [SPECIES_AZURILL]               = {{EVO_LEVEL, 14, SPECIES_MARILL}},
     [SPECIES_SPOINK]                = {{EVO_LEVEL, 32, SPECIES_GRUMPIG}},
     [SPECIES_MAWILE]                = {{EVO_MEGA_EVOLUTION, ITEM_MAWILITE, SPECIES_MAWILE_MEGA}},
     [SPECIES_MEDITITE]              = {{EVO_LEVEL, 37, SPECIES_MEDICHAM}},
