@@ -23,7 +23,7 @@ FallarborTown_Mart_Pokemart:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
-	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_NONE
 	release
