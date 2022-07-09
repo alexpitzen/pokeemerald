@@ -2542,7 +2542,7 @@ static const struct LevelUpMove sTaurosLevelUpLearnset[] = {
 static const struct LevelUpMove sMagikarpLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SPLASH),
     LEVEL_UP_MOVE(15, MOVE_TACKLE),
-    LEVEL_UP_MOVE(30, MOVE_FLAIL),
+    LEVEL_UP_MOVE(20, MOVE_FLAIL),
     LEVEL_UP_END
 };
 
@@ -6131,7 +6131,7 @@ static const struct LevelUpMove sCrawdauntLevelUpLearnset[] = {
 static const struct LevelUpMove sFeebasLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SPLASH),
     LEVEL_UP_MOVE(15, MOVE_TACKLE),
-    LEVEL_UP_MOVE(30, MOVE_FLAIL),
+    LEVEL_UP_MOVE(20, MOVE_FLAIL),
     LEVEL_UP_END
 };
 
