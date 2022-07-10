@@ -64,10 +64,10 @@ static const struct ContestWinner sContestWinnerPicDummy =
 
 void SetTrainerId(u32 trainerId, u8 *dst)
 {
-    dst[0] = trainerId;
-    dst[1] = trainerId >> 8;
-    dst[2] = trainerId >> 16;
-    dst[3] = trainerId >> 24;
+    dst[0] = 0;//trainerId;
+    dst[1] = 0;//trainerId >> 8;
+    dst[2] = 0;//trainerId >> 16;
+    dst[3] = trainerId >> 31 >> 1;
 }
 
 u32 GetTrainerId(u8 *trainerId)
