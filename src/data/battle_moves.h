@@ -3240,7 +3240,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ROCK_SMASH] =
     {
         .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 20,
+        .power = 40,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 15,
