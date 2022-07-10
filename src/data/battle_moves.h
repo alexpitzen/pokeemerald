@@ -14147,4 +14147,3 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = 0
     },
 };
-
