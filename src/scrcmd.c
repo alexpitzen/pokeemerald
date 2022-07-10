@@ -1717,16 +1717,17 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
     u8 i;
     u16 moveId = ScriptReadHalfword(ctx);
 
-    gSpecialVar_Result = PARTY_SIZE;
+    gSpecialVar_Result = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
+        gSpecialVar_0x8004 = species;
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
         {
             gSpecialVar_Result = i;
-            gSpecialVar_0x8004 = species;
+            //gSpecialVar_0x8004 = species;
             break;
         }
     }
