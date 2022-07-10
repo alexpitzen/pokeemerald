@@ -2341,7 +2341,7 @@ static void Task_WallyTutorialBagMenu(u8 taskId)
         case WALLY_BAG_DELAY * 2:
             PlaySE(SE_SELECT);
             BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
-            gSpecialVar_ItemId = ITEM_POKE_BALL;
+            gSpecialVar_ItemId = ITEM_MASTER_BALL;
             OpenContextMenu(taskId);
             tTimer++;
             break;
