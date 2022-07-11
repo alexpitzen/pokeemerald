@@ -1054,7 +1054,7 @@ static bool32 UpdateMatchCallMinutesCounter(void)
 
 static bool32 CheckMatchCallChance(void)
 {
-    int callChance = 1;
+    int callChance = 0;
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG) && GetMonAbility(&gPlayerParty[0]) == ABILITY_LIGHTNING_ROD)
         callChance = 2;
 
