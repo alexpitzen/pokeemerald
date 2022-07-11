@@ -85,17 +85,18 @@ RustboroCity_EventScript_MatchCallTutorial::
 	special ScriptMenu_CreateStartMenuForPokenavTutorial
 	waitstate
 	switch VAR_RESULT
-	case 0, RustboroCity_EventScript_PleaseSelectPokenav
-	case 1, RustboroCity_EventScript_PleaseSelectPokenav
-	case 2, RustboroCity_EventScript_PleaseSelectPokenav
-	case 4, RustboroCity_EventScript_PleaseSelectPokenav
-	case 5, RustboroCity_EventScript_PleaseSelectPokenav
-	case 6, RustboroCity_EventScript_PleaseSelectPokenav
-	case 7, RustboroCity_EventScript_PleaseSelectPokenav
-	case MULTI_B_PRESSED, RustboroCity_EventScript_PleaseSelectPokenav
+	case 0, skip_call
+	case 1, skip_call
+	case 2, skip_call
+	case 4, skip_call
+	case 5, skip_call
+	case 6, skip_call
+	case 7, skip_call
+	case MULTI_B_PRESSED, skip_call
 	special OpenPokenavForTutorial
 	waitstate
 	delay 20
+skip_call::
 	msgbox RustboroCity_Text_IdBetterGetBackToWork, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SCIENTIST, RustboroCity_Movement_ScientistLeave

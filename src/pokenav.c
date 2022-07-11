@@ -350,7 +350,7 @@ static void CB2_InitPokenavForTutorial(void)
     else
     {
         InitPokenavResources(gPokenavResources);
-        gPokenavResources->mode = POKENAV_MODE_FORCE_CALL_READY;
+        gPokenavResources->mode = POKENAV_MODE_FORCE_CALL_EXIT;
         ResetTasks();
         ResetSpriteData();
         FreeAllSpritePalettes();
