@@ -1919,13 +1919,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         {
 
             if (gTrainers[trainerNum].doubleBattle == TRUE)
-                personalityValue = 0x80;
+                personalityValue = 0x1;
             else if (gTrainers[trainerNum].encounterMusic_gender & F_TRAINER_FEMALE)
-                personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
+                personalityValue = 0x2; // Use personality more likely to result in a female Pokémon
             else
-                personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
+                personalityValue = 0x3; // Use personality more likely to result in a male Pokémon
 
-            for (j = 0; gTrainers[trainerNum].trainerName[j] != EOS; j++)
+            for (j = 0; gTrainers[trainerNum].trainerName[j] == EOS; j++)
                 nameHash += gTrainers[trainerNum].trainerName[j];
 
             switch (gTrainers[trainerNum].partyFlags)
@@ -2007,7 +2007,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             {
                 const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerNum].party.ItemCustomMoves;
 
-                for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
+                for (j = 0; gSpeciesNames[partyData[i].species][j] == EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
 
                 personalityValue += nameHash << 8;
@@ -2015,10 +2015,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 if (gSaveBlock1Ptr->tx_Random_Trainer) //tx_randomizer_and_challenges
                 {
                     species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_T_TRAINER, trainerNum);
-                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, 3, 0);
                 }
                 else
-                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, 3, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
