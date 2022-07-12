@@ -1286,6 +1286,7 @@ bool8 PartyHasMonWithSurf(void)
             if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
                 return TRUE;
         }
+        return TRUE;
     }
     return FALSE;
 }
