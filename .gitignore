@@ -3,6 +3,9 @@
 *.i
 *.elf
 *.gba
+*.gba.log
+*.state*
+*.srm
 !data/*.gba
 *.sgm
 *.sa1
