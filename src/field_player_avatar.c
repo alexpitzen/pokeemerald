@@ -1731,14 +1731,14 @@ static bool8 Fishing_GetRodOut(struct Task *task)
 {
     struct ObjectEvent *playerObjEvent;
     const s16 minRounds1[] = {
-        [OLD_ROD]   = 1,
+        [OLD_ROD]   = 0,
         [GOOD_ROD]  = 1,
-        [SUPER_ROD] = 1
+        [SUPER_ROD] = 0
     };
     const s16 minRounds2[] = {
-        [OLD_ROD]   = 1,
-        [GOOD_ROD]  = 3,
-        [SUPER_ROD] = 6
+        [OLD_ROD]   = 2,
+        [GOOD_ROD]  = 1,
+        [SUPER_ROD] = 1
     };
 
     task->tRoundsPlayed = 0;
@@ -1773,9 +1773,9 @@ static bool8 Fishing_InitDots(struct Task *task)
     task->tNumDots = 0;
     randVal = Random();
     randVal %= 10;
-    task->tDotsRequired = randVal + 1;
+    task->tDotsRequired = randVal;
     if (task->tRoundsPlayed == 0)
-        task->tDotsRequired = randVal + 4;
+        task->tDotsRequired = randVal + 1;
     if (task->tDotsRequired >= 10)
         task->tDotsRequired = 10;
     return TRUE;
@@ -1789,9 +1789,9 @@ static bool8 Fishing_ShowDots(struct Task *task)
     task->tFrameCounter++;
     if (JOY_NEW(A_BUTTON))
     {
-        task->tStep = FISHING_NO_BITE;
+        task->tStep = FISHING_ON_HOOK;
         if (task->tRoundsPlayed != 0)
-            task->tStep = FISHING_GOT_AWAY;
+            task->tStep--;
         return TRUE;
     }
     else
@@ -1888,7 +1888,7 @@ static bool8 Fishing_CheckMoreDots(struct Task *task)
     {
         [OLD_ROD]   = {0, 0},
         [GOOD_ROD]  = {0, 0},
-        [SUPER_ROD] = {1, 0}
+        [SUPER_ROD] = {0, 1}
     };
 
     AlignFishingAnimationFrames();
