@@ -1291,6 +1291,7 @@ bool8 PartyHasMonWithSurf(void)
 
         if (CheckBagHasItem(ITEM_HM03, 1) && HMsOverwriteOptionActive())
             return TRUE;
+        return TRUE;
     }
     return FALSE;
 }
