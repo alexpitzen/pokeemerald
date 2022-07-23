@@ -51,6 +51,7 @@ A Discord-based ROM hacking community that has many members who hack using the d
 * Starters are shiny
 * Gym leader & Elite Four member teams are shiny
 * All evolution stones (including sun & moon) are available to purchase in Lavaridge
+* TMs have unlimited uses
 * Pokémon base stats updated to match Gen VIII
 * Friendship and trade evolutions replaced with level & stone evolutions (see below)
 * Evolution & learnset levels decreased (see below)
