@@ -18,7 +18,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 * Evolution & learnset levels decreased (see below)
     * Starters normalized to evolve at 16 & 30
 * HMs do not have to be taught to a pokémon in order to be used in the overworld (applies to cut, surf, strength, rock smash, waterfall, and dive)
-* HM moves can be overwritten (except surf when outside of a battle, e.g. using a TM or learning a move from leveling up via rare candy)
+* HM moves can be overwritten
 * Fishing always succeeds and has a 15 second window to press A to start the encounter instead of ~0.5 seconds (makes fishing on emulator speedup significantly easier)
 * Coin case is obtained in exchange for a pokéball instead of a harbor mail
 * Game corner coin prices adjusted to make TMs cost ¥5,500 instead of ¥80,000

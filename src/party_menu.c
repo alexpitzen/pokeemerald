@@ -4619,8 +4619,10 @@ bool8 IsMoveHm(u16 move)
 
     for (i = 2; i < 3; i++)
     {
-        if (sTMHMMoves[i + NUM_TECHNICAL_MACHINES] == move)
-            return TRUE;
+        // The move will never be 0, so the function always returns FALSE
+        if (sTMHMMoves[i + NUM_TECHNICAL_MACHINES] == 0)
+            // Need to use the move variable so it doesn't get optimized out
+            return move;
     }
     return FALSE;
 }
