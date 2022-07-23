@@ -24,6 +24,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 * Game corner coin prices adjusted to make TMs cost ¥5,500 instead of ¥80,000
 * When obtaining the pokénav, player is no longer held hostage until calling the president (menu can be exited immediately instead)
 * Phone no longer rings randomly, unless the party's lead Pokémon has the lightning rod ability
+* Oldale mart employee gives 2 potions instead of 1 (compensating for lost PC potion)
 * Moves
     * Constrict base power increased to 30
     * Rock smash base power increased to 40
