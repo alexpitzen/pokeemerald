@@ -261,7 +261,6 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
         * Evolves into Umbreon with ~~high friendship during nighttime~~ -> Moon Stone
     * Porygon
         * Evolves into Porygon2 ~~when traded with Up Grade~~ -> at level 26
-        * Learns Sharpen at ~~24~~ -> 26
     * Omanyte
         * Evolves into Omastar at level ~~40~~ -> 25
     * Kabuto
