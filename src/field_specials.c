@@ -1511,7 +1511,7 @@ void TryInitBattleTowerAwardManObjectEvent(void)
 u16 GetDaysUntilPacifidlogTMAvailable(void)
 {
     u16 tmReceivedDay = VarGet(VAR_PACIFIDLOG_TM_RECEIVED_DAY);
-    if (gLocalTime.days - tmReceivedDay >= 7)
+    if (gLocalTime.days - tmReceivedDay >= 0)
         return 0;
     else if (gLocalTime.days < 0)
         return 8;

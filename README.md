@@ -22,6 +22,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 * Game corner coin prices adjusted to make TMs cost ¥5,500 instead of ¥80,000
 * When obtaining the pokénav, player is no longer held hostage until calling the president (menu can be exited immediately instead)
 * Phone no longer rings randomly, unless the party's lead Pokémon has the lightning rod ability
+* Pacifidlog TM guy doesn't require a 7 day wait and gives TM21 Frustration for showing him a pokemon with <150 friendship instead of <50
 * Moves
     * Constrict base power increased to 30
     * Rock smash base power increased to 40
