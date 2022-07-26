@@ -13,7 +13,7 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
 	goto_if_ge VAR_RESULT, 4, PacifidlogTown_House2_EventScript_GiveReturn
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
-	goto_if_ge VAR_RESULT, 2, PacifidlogTown_House2_EventScript_PutInEffort
+	goto_if_ge VAR_RESULT, 4, PacifidlogTown_House2_EventScript_PutInEffort
 	goto PacifidlogTown_House2_EventScript_GiveFrustration
 	end
 
