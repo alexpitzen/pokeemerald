@@ -12,6 +12,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 * Starters are shiny
 * Gym leader & Elite Four member teams are shiny
 * All evolution stones (including sun & moon) are available to purchase in Lavaridge
+* EV reducing berries can be purchased in Lilycove instead of X items
 * Friendship and trade evolutions replaced with level & stone evolutions (see below)
 * Evolution & learnset levels decreased (see below)
     * Starters normalized to evolve at 16 & 32
