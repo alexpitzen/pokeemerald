@@ -861,7 +861,7 @@ const struct Item gItems[] =
     {
         .name = _("RARE CANDY"),
         .itemId = ITEM_RARE_CANDY,
-        .price = 4900,
+        .price = 1,
         .description = sRareCandyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1048,7 +1048,7 @@ const struct Item gItems[] =
     {
         .name = _("SUPER REPEL"),
         .itemId = ITEM_SUPER_REPEL,
-        .price = 500,
+        .price = 1,
         .holdEffectParam = 200,
         .description = sSuperRepelDesc,
         .pocket = POCKET_ITEMS,
@@ -1060,7 +1060,7 @@ const struct Item gItems[] =
     {
         .name = _("MAX REPEL"),
         .itemId = ITEM_MAX_REPEL,
-        .price = 700,
+        .price = 1,
         .holdEffectParam = 250,
         .description = sMaxRepelDesc,
         .pocket = POCKET_ITEMS,
@@ -1083,7 +1083,7 @@ const struct Item gItems[] =
     {
         .name = _("REPEL"),
         .itemId = ITEM_REPEL,
-        .price = 350,
+        .price = 1,
         .holdEffectParam = 100,
         .description = sRepelDesc,
         .pocket = POCKET_ITEMS,
