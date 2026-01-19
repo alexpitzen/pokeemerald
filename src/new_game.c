@@ -48,6 +48,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "tx_randomizer_and_challenges.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -131,6 +132,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
+    SaveData_TxRandomizerAndChallenges();
     SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
 }

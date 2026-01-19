@@ -28,6 +28,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "tx_randomizer_and_challenges.h"
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -481,6 +482,12 @@ void CreateWildMon(u16 species, u8 level)
     bool32 checkCuteCharm = TRUE;
 
     ZeroEnemyPartyMons();
+
+    // tx_randomizer
+    if (gSaveBlock1Ptr->tx_Random_WildPokemon)
+    {
+        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
+    }
 
     switch (gSpeciesInfo[species].genderRatio)
     {

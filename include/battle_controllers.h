@@ -276,6 +276,7 @@ extern u8 gBattleControllerData[MAX_BATTLERS_COUNT];
 void HandleLinkBattleSetup(void);
 void SetUpBattleVarsAndBirchZigzagoon(void);
 void InitBattleControllers(void);
+bool32 IsValidForBattle(struct Pokemon *mon); // tx_randomizer
 bool32 IsValidForBattle(struct Pokemon *mon);
 void TryReceiveLinkBattleData(void);
 void PrepareBufferDataTransferLink(u32 battler, u32 bufferId, u16 size, u8 *data);

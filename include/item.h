@@ -269,4 +269,9 @@ bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile volatile);
 u32 GetItemSellPrice(u32 itemId);
 bool32 IsHoldEffectChoice(enum HoldEffect holdEffect);
 
+// tx_randomizer
+u16 RandomItemId(u16 itemId);
+u16 RandomItem(void);
+u16 RandomItemHidden(void);
+
 #endif // GUARD_ITEM_H

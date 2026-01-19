@@ -70,6 +70,12 @@ static inline u16 Random2(void)
     return Random2_32() >> 16;
 }
 
+// tx_randomizer
+u16 RandomSeeded(u16 value, u8 seeded);
+u16 RandomSeededModulo(u32 value, u16 modulo);
+void ShuffleListU8(u8 *list, u8 count, u8 seed);
+void ShuffleListU16(u16 *list, u16 count, u32 seed);
+
 void AdvanceRandom(void);
 
 extern rng_value_t gRngValue;

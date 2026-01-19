@@ -34,6 +34,7 @@
 #include "constants/songs.h"
 #include "constants/items.h"
 #include "caps.h"
+#include "tx_randomizer_and_challenges.h"
 
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c
@@ -2145,7 +2146,7 @@ static void MoveBattleBarGraphically(u8 battler, u8 whichBar)
                     &gBattleSpritesDataPtr->battleBars[battler].currValue,
                     array, B_EXPBAR_PIXELS / 8);
         level = GetMonData(GetBattlerMon(battler), MON_DATA_LEVEL);
-        if (level >= MAX_LEVEL)
+        if (level >= GetCurrentPartyLevelCap())
         {
             for (i = 0; i < 8; i++)
                 array[i] = 0;

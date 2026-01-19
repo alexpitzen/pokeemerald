@@ -1173,6 +1173,19 @@ struct SaveBlock1
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     // sizeof: 0x3???
+    u8 tx_Random_WildPokemon:1;
+    u8 tx_Random_Similar:1;
+    u8 tx_Random_MapBased:1;
+    u8 tx_Random_IncludeLegendaries:1;
+    u8 tx_Random_Abilities:1;
+    u8 tx_Random_Moves:1;
+    u8 tx_Random_Trainer:1;
+    // u8 tx_Random_OneForOne:1;
+    u8 tx_Challenges_LevelCap:2;
+    u8 tx_Challenges_ExpMultiplies:2;
+    u8 tx_Random_Items:1;
+    u8 tx_Random_Static:1;
+    u8 tx_Random_Starter:1;
 };
 
 extern struct SaveBlock1 *gSaveBlock1Ptr;
@@ -1183,6 +1196,8 @@ struct MapPosition
     s16 y;
     s8 elevation;
 };
+
+#define TX_RANDOMIZER TRUE
 
 #if T_SHOULD_RUN_MOVE_ANIM
 extern bool32 gLoadFail;

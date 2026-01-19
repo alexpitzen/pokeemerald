@@ -33,6 +33,7 @@
 #include "constants/trainers.h"
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
+#include "tx_randomizer_and_challenges.h"
 
 static void PlayerPartnerHandleDrawTrainerPic(u32 battler);
 static void PlayerPartnerHandleTrainerSlideBack(u32 battler);
