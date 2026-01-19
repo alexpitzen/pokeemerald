@@ -1,5 +1,5 @@
-#ifndef GUARD_DIFFICULTY_H
-#define GUARD_DIFFICULTY_H
+#ifndef GUARD_TX_RANDOMIZER_H
+#define GUARD_TX_RANDOMIZER_H
 //tx_randomizer_and_challenges
 
 // default options set by the dev
@@ -49,8 +49,8 @@
 #define TX_RANDOM_T_TRAINER         1
 #define TX_RANDOM_T_MOVES           2
 #define TX_RANDOM_T_ABILITY         3
-// #define TX_RANDOM_T_EVO             4
-// #define TX_RANDOM_T_EVO_METH        5
+#define TX_RANDOM_T_EVO             4
+#define TX_RANDOM_T_EVO_METH        5
 #define TX_RANDOM_T_STATIC          6
 
 void CB2_InitTxRandomizerChallengesMenu(void);
@@ -88,4 +88,4 @@ extern struct tx_challenges_OptionsMenu *sChallengesOptions;
 
 #define TX_NUZLOCKE_CEMETERY_ICON_GRAY TRUE
 
-#endif // GUARD_DIFFICULTY_H
+#endif // GUARD_TX_RANDOMIZER_H

@@ -38,6 +38,7 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
+#include "tx_randomizer_and_challenges.h"
 
 /*
  * Main menu state machine

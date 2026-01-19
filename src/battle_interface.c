@@ -2146,7 +2146,7 @@ static void MoveBattleBarGraphically(u8 battler, u8 whichBar)
                     &gBattleSpritesDataPtr->battleBars[battler].currValue,
                     array, B_EXPBAR_PIXELS / 8);
         level = GetMonData(GetBattlerMon(battler), MON_DATA_LEVEL);
-        if (level >= GetCurrentPartyLevelCap())
+        if (level >= GetCurrentLevelCap())
         {
             for (i = 0; i < 8; i++)
                 array[i] = 0;

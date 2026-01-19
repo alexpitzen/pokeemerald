@@ -1182,7 +1182,7 @@ struct SaveBlock1
     u8 tx_Random_Trainer:1;
     // u8 tx_Random_OneForOne:1;
     u8 tx_Challenges_LevelCap:2;
-    u8 tx_Challenges_ExpMultiplies:2;
+    u8 tx_Challenges_ExpMultiplier:2;
     u8 tx_Random_Items:1;
     u8 tx_Random_Static:1;
     u8 tx_Random_Starter:1;

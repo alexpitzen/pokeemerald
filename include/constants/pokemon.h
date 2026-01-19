@@ -321,6 +321,14 @@ enum EvolutionMethods {
     EVO_SPIN                    // The player spins in the overworld
 };
 
+//tx_randomizer
+#ifndef POKEMON_EXPANSION
+#define EVOS_PER_LINE 6
+#else
+#define EVOS_PER_LINE 22
+#endif
+
+
 enum EvolutionMode {
     EVO_MODE_NORMAL,
     EVO_MODE_TRADE,

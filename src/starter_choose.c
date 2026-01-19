@@ -358,7 +358,7 @@ u16 GetStarterPokemon(u16 chosenStarterId)
         chosenStarterId = 0;
 
     u16 mon = sStarterMon[chosenStarterId];
-    u16 i;
+    // u16 i;
 
     if (gSaveBlock1Ptr->tx_Random_Starter)
     {

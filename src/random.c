@@ -235,7 +235,7 @@ u16 RandomSeeded(u16 value, u8 seeded)
     return result;
 }
 #define I_MAX 5
-u16 RandomSeededModule(u32 value, u16 modulo)
+u16 RandomSeededModulo(u32 value, u16 modulo)
 {
     u32 otId;
     u32 RAND_MAX;
