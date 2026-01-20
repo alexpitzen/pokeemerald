@@ -14569,38 +14569,51 @@ static u16 PickRandomizedSpeciesFromEWRAM(u16 species) //INTERNAL use only!
 //******* non EWRAM functions
 u16 PickRandomStarter(u16 *speciesList, u8 starterId)
 {
-    u16 species;
+    // u16 species;
     // if (gSaveBlock1Ptr->tx_Random_Chaos)
     //     return sRandomSpeciesLegendary[RandomSeededModulo(species, RANDOM_SPECIES_COUNT_LEGENDARY)];
 
-    if (gSaveBlock1Ptr->tx_Random_Similar)
-    {
-        u16 *stemp = Alloc(sizeof(sRandomSpeciesEvo0));
-        // TODO 3 stage
-        DmaCopy16(3, sRandomSpeciesEvo0, stemp, sizeof(sRandomSpeciesEvo0));
-        ShuffleListU16(stemp, RANDOM_SPECIES_EVO_0_COUNT, 12289);
-        species = stemp[starterId*27];
-        Free(stemp);
-        return species;
-    }
-    else if (gSaveBlock1Ptr->tx_Random_IncludeLegendaries)
-    {
-        u16 *stemp = Alloc(sizeof(sRandomSpeciesLegendary));
-        DmaCopy16(3, sRandomSpeciesLegendary, stemp, sizeof(sRandomSpeciesLegendary));
-        ShuffleListU16(stemp, RANDOM_SPECIES_COUNT_LEGENDARY, 12289);
-        species = stemp[starterId*27];
-        Free(stemp);
-        return species;
-    }
-    else
-    {
-        u16 *stemp = Alloc(sizeof(sRandomSpecies));
-        DmaCopy16(3, sRandomSpecies, stemp, sizeof(sRandomSpecies));
-        ShuffleListU16(stemp, RANDOM_SPECIES_COUNT, 12289);
-        species = stemp[starterId*27];
-        Free(stemp);
-        return species;  
-    } 
+    #ifndef NDEBUG
+        DebugPrintf("PickRandomStarterr starterId=%d;", starterId);
+    #endif
+    u16 species = starterId * 3;
+    // species = GetRandomSpecies(species, TRUE, TX_RANDOM_T_WILD_POKEMON, 0);
+    species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
+    return species;
+    // if (gSaveBlock1Ptr->tx_Random_Similar)
+    // {
+    //     u16 *stemp = Alloc(sizeof(sRandomSpeciesEvo0));
+    //     // TODO 3 stage
+    //     DmaCopy16(3, sRandomSpeciesEvo0, stemp, sizeof(sRandomSpeciesEvo0));
+    //     ShuffleListU16(stemp, RANDOM_SPECIES_EVO_0_COUNT, 12289);
+    //     species = stemp[starterId*27];
+    //     #ifndef NDEBUG
+    //         s32 i;
+    //         for (i = 0; i < 100; i++)
+    //             DebugPrintf("PickRandomStarterr species=%d;", stemp[i]);
+    //         DebugPrintf("PickRandomStarterr species=%d;", species);
+    //     #endif
+    //     Free(stemp);
+    //     return species;
+    // }
+    // else if (gSaveBlock1Ptr->tx_Random_IncludeLegendaries)
+    // {
+    //     u16 *stemp = Alloc(sizeof(sRandomSpeciesLegendary));
+    //     DmaCopy16(3, sRandomSpeciesLegendary, stemp, sizeof(sRandomSpeciesLegendary));
+    //     ShuffleListU16(stemp, RANDOM_SPECIES_COUNT_LEGENDARY, 12289);
+    //     species = stemp[starterId*27];
+    //     Free(stemp);
+    //     return species;
+    // }
+    // else
+    // {
+    //     u16 *stemp = Alloc(sizeof(sRandomSpecies));
+    //     DmaCopy16(3, sRandomSpecies, stemp, sizeof(sRandomSpecies));
+    //     ShuffleListU16(stemp, RANDOM_SPECIES_COUNT, 12289);
+    //     species = stemp[starterId*27];
+    //     Free(stemp);
+    //     return species;  
+    // } 
 }
 
 // u8 GetTypeBySpecies(u16 species, u8 typeNum)
@@ -14654,9 +14667,9 @@ static u16 GetRandomSpecies(u16 species, u8 mapBased, u8 type, u16 additionalOff
             break;
         }
 
-        #ifdef GBA_PRINTF
+        #ifndef NDEBUG
         slotNew = gSpeciesMapping[speciesResult];
-        mgba_printf(MGBA_LOG_DEBUG, "%s: species=%d=%s; mapBased=%d; speciesResult=%d=%s; %s-->>%s", ConvertToAscii(gRandomizationTypes[type]), species, ConvertToAscii(gSpeciesNames[species]), mapBased, speciesResult, ConvertToAscii(gSpeciesNames[speciesResult]), ConvertToAscii(gEvoStages[slot]), ConvertToAscii(gEvoStages[slotNew]));
+        DebugPrintf("%s: species=%d=%s; mapBased=%d; speciesResult=%d=%s; %s-->>%s", gRandomizationTypes[type], species, GetSpeciesName(species), mapBased, speciesResult, GetSpeciesName(speciesResult), gEvoStages[slot], gEvoStages[slotNew]);
         #endif
 
         return speciesResult;
