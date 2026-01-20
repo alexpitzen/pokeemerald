@@ -14576,7 +14576,7 @@ u16 PickRandomStarter(u16 *speciesList, u8 starterId)
     #ifndef NDEBUG
         DebugPrintf("PickRandomStarterr starterId=%d;", starterId);
     #endif
-    u16 species = starterId * 3;
+    u16 species = starterId * 3 + 1;
     // species = GetRandomSpecies(species, TRUE, TX_RANDOM_T_WILD_POKEMON, 0);
     species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
     return species;
