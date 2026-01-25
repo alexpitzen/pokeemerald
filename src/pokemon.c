@@ -70,7 +70,8 @@
 #include "constants/weather.h"
 #include "tx_randomizer_and_challenges.h"
 
-#define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
+// #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
+#define FRIENDSHIP_EVO_THRESHOLD 100
 
 struct SpeciesItem
 {
@@ -11879,16 +11880,9 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
 // This is only used to create Wally's Ralts.
 void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level)
 {
-    u32 personality;
     u32 otId;
-
-    do
-    {
-        otId = Random32();
-        personality = Random32();
-    }
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_MALE);
-    CreateMon(mon, species, level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PRESET, otId);
+    otId = Random32();
+    CreateMon(mon, species, level, USE_RANDOM_IVS, TRUE, otId, OT_ID_PRESET, otId);
 }
 
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality)

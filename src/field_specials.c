@@ -1460,7 +1460,7 @@ void SetShoalItemFlag(u16 unused)
 void LoadWallyZigzagoon(void)
 {
     u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, TRUE, 0, OT_ID_PRESET, 0);
     monData = TRUE;
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
     monData = MOVE_TACKLE;
@@ -1592,7 +1592,7 @@ void TryInitBattleTowerAwardManObjectEvent(void)
 u16 GetDaysUntilPacifidlogTMAvailable(void)
 {
     u16 tmReceivedDay = VarGet(VAR_PACIFIDLOG_TM_RECEIVED_DAY);
-    if (gLocalTime.days - tmReceivedDay >= 7)
+    if (gLocalTime.days - tmReceivedDay >= 0)
         return 0;
     else if (gLocalTime.days < 0)
         return 8;

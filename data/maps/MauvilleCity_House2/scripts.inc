@@ -6,7 +6,7 @@ MauvilleCity_House2_EventScript_Woman::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_COIN_CASE, MauvilleCity_House2_EventScript_ReceivedCoinCase
 	msgbox MauvilleCity_House2_Text_BuyHarborMailAtSlateport, MSGBOX_DEFAULT
-	checkitem ITEM_HARBOR_MAIL
+	checkitem ITEM_POKE_BALL
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_House2_EventScript_AskToTradeForHarborMail
 	release
 	end
@@ -26,7 +26,7 @@ MauvilleCity_House2_EventScript_AcceptTrade::
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
 	giveitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	removeitem ITEM_HARBOR_MAIL
+	removeitem ITEM_POKE_BALL
 	setflag FLAG_RECEIVED_COIN_CASE
 	goto MauvilleCity_House2_EventScript_ReceivedCoinCase
 	end
@@ -44,11 +44,11 @@ MauvilleCity_House2_EventScript_DeclineTrade::
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
 	.string "If I had a BIKE, it'd be easy to cycle to\n"
 	.string "SLATEPORT for some shopping.\p"
-	.string "I'd be able to buy HARBOR MAIL at the\n"
+	.string "I'd be able to buy 1 POKE BALL at the\n"
 	.string "POKéMON MART in SLATEPORT…$"
 
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
-	.string "Oh! You have HARBOR MAIL?\n"
+	.string "Oh! You have 1 POKE BALL?\n"
 	.string "Will you trade it for a COIN CASE?$"
 
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
