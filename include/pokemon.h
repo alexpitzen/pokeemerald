@@ -920,7 +920,6 @@ void SavePlayerPartyMon(u32 index, struct Pokemon *mon);
 bool32 IsSpeciesOfType(u32 species, enum Type type);
 
 // tx_randomizer
-void RandomizeSpeciesListEWRAM(u16 seed);
 void RandomizeTypeEffectivenessListEWRAM(u16 seed);
 u16 PickRandomStarter(u16 *speciesList, u8 starterId);
 u8 GetTypeBySpecies(u16 species, u8 typeNum);

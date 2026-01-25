@@ -52,6 +52,7 @@
 #define TX_RANDOM_T_EVO             4
 #define TX_RANDOM_T_EVO_METH        5
 #define TX_RANDOM_T_STATIC          6
+#define TX_RANDOM_T_STARTER_POKEMON 7
 
 void CB2_InitTxRandomizerChallengesMenu(void);
 void SaveData_TxRandomizerAndChallenges(void);

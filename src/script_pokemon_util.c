@@ -118,7 +118,14 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 
     // tx_randomizer
     if (gSaveBlock1Ptr->tx_Random_Static)
-        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_STATIC, 0);
+    {
+        if (species == SPECIES_VOLTORB || species == SPECIES_ELECTRODE || species == SPECIES_KECLEON) {
+            species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
+        }
+        else {
+            species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_STATIC, 0);
+        }
+    }
     if (gSaveBlock1Ptr->tx_Random_Items)
         item = RandomItemId(item);
 
