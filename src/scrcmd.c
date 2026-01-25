@@ -2306,6 +2306,7 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         if (!species)
             break;
         gSpecialVar_0x8004 = species;
+        gSpecialVar_Result = 0;
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
         {
             gSpecialVar_Result = i;
