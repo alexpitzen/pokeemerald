@@ -13555,7 +13555,7 @@ static void Cmd_handleballthrow(void)
             // catchRate = gBattleStruct->safariCatchFactor * 1275 / 100;
             catchRate = 600;
         else
-            catchRate = min(gSpeciesInfo[gBattleMons[gBattlerTarget].species].catchRate, 45);
+            catchRate = max(gSpeciesInfo[gBattleMons[gBattlerTarget].species].catchRate, 45);
 
         if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
         {
