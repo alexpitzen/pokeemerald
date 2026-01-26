@@ -7614,6 +7614,7 @@ static const u16 sSpeciesAllBst[NUM_SPECIES] =
     [SPECIES_COTTONEE] = 280,
     [SPECIES_PETILIL] = 280,
     [SPECIES_ROCKRUFF] = 280,
+    [SPECIES_ROCKRUFF_OWN_TEMPO] = 280,
     [SPECIES_ARROKUDA] = 280,
     [SPECIES_NACLI] = 280,
     [SPECIES_WATTREL] = 280,
@@ -8526,9 +8527,6 @@ static const u16 sRandomSpeciesGhostBst[] =
   SPECIES_SANDYGAST,
   SPECIES_HONEDGE,
   SPECIES_ZORUA_HISUI,
-  SPECIES_PUMPKABOO_SUPER,
-  SPECIES_PUMPKABOO_LARGE,
-  SPECIES_PUMPKABOO_SMALL,
   SPECIES_PUMPKABOO_AVERAGE,
   SPECIES_FRILLISH,
   SPECIES_DRIFLOON,
@@ -8639,7 +8637,6 @@ static const u16 sRandomSpeciesSteelBst[] =
   SPECIES_BASTIODON,
   SPECIES_REVAVROOM,
   SPECIES_COPPERAJAH,
-  SPECIES_AEGISLASH_BLADE,
   SPECIES_AEGISLASH_SHIELD,
   SPECIES_BRONZONG,
   SPECIES_SCIZOR,
@@ -8723,7 +8720,6 @@ static const u16 sRandomSpeciesFireBst[] =
   SPECIES_PIGNITE,
   SPECIES_RABOOT,
   SPECIES_TORRACAT,
-  SPECIES_CASTFORM_SUNNY,
   SPECIES_MAROWAK_ALOLA,
   SPECIES_MAGCARGO,
   SPECIES_CAMERUPT,
@@ -8859,7 +8855,6 @@ static const u16 sRandomSpeciesWaterBst[] =
   SPECIES_DEWOTT,
   SPECIES_DRIZZILE,
   SPECIES_BRIONNE,
-  SPECIES_CASTFORM_RAINY,
   SPECIES_AZUMARILL,
   SPECIES_WUGTRIO,
   SPECIES_QUAGSIRE,
@@ -9358,7 +9353,6 @@ static const u16 sRandomSpeciesIceBst[] =
   SPECIES_AMAURA,
   SPECIES_VANILLISH,
   SPECIES_SEALEO,
-  SPECIES_CASTFORM_SNOWY,
   SPECIES_ARCTIBAX,
   SPECIES_SNEASEL,
   SPECIES_PILOSWINE,
@@ -21677,7 +21671,7 @@ static u16 GetRandomSpecies(u16 species, u8 mapBased, u8 type, u16 additionalOff
                         speciesResult = typedMons[bstIndexLow + offset];
                         #ifndef NDEBUG
                         // DebugPrintf("end result: index %d; species: %S", bstIndexLow + offset, GetSpeciesName(speciesResult));
-                        DebugPrintf("*********** SUMMARY: %S (%d) -> %S (%d)", GetSpeciesName(species), originalBst, GetSpeciesName(speciesResult), sSpeciesAllBst[speciesResult]);
+                        DebugPrintf("* Changed: %S (%d) -> %S (%d)", GetSpeciesName(species), originalBst, GetSpeciesName(speciesResult), sSpeciesAllBst[speciesResult]);
                         #endif
                         return speciesResult;
                     }

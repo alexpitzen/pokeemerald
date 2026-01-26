@@ -1922,6 +1922,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         u32 monIndices[monsCount];
         DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags);
 
+        #ifndef NDEBUG
+        DebugPrintf("**** Trainer battle: %S", trainer->trainerName);
+        #endif
+
         for (i = 0; i < monsCount; i++)
         {
             u32 monIndex = monIndices[i];
