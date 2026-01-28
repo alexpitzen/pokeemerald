@@ -136,7 +136,7 @@ Route101_Movement_EnterScene:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
-	walk_fast_up
+	@ walk_fast_up
 	walk_in_place_faster_left
 	step_end
 

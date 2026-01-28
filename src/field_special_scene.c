@@ -194,7 +194,7 @@ static void Task_HandleTruckSequence(u8 taskId)
     {
     case 0:
         tTimer++;
-        if (tTimer == 90)
+        if (tTimer == 1)
         {
             SetCameraPanningCallback(NULL);
             tTimer = 0;
@@ -205,7 +205,7 @@ static void Task_HandleTruckSequence(u8 taskId)
         break;
     case 1:
         tTimer++;
-        if (tTimer == 150)
+        if (tTimer == 2)
         {
             FadeInFromBlack();
             tTimer = 0;
@@ -214,7 +214,7 @@ static void Task_HandleTruckSequence(u8 taskId)
         break;
     case 2:
         tTimer++;
-        if (!gPaletteFade.active && tTimer > 300)
+        if (!gPaletteFade.active && tTimer > 2)
         {
             tTimer = 0;
             DestroyTask(tTaskId1);
@@ -234,7 +234,7 @@ static void Task_HandleTruckSequence(u8 taskId)
         break;
     case 4:
         tTimer++;
-        if (tTimer == 90)
+        if (tTimer == 1)
         {
             PlaySE(SE_TRUCK_UNLOAD);
             tTimer = 0;
@@ -243,7 +243,7 @@ static void Task_HandleTruckSequence(u8 taskId)
         break;
     case 5:
         tTimer++;
-        if (tTimer == 120)
+        if (tTimer == 1)
         {
             MapGridSetMetatileIdAt(4 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_InsideOfTruck_ExitLight_Top);
             MapGridSetMetatileIdAt(4 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_InsideOfTruck_ExitLight_Mid);

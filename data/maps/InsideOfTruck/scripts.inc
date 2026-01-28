@@ -32,7 +32,8 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1
     call SetSkipIntroFlags
     call SetSkipIntroFlagsMale
-	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	@ setdynamicwarp MAP_LITTLEROOT_TOWN, 10, 0
+	setdynamicwarp MAP_ROUTE101, 11, 18
 	releaseall
 	end
 
@@ -47,7 +48,8 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 1
     call SetSkipIntroFlags
     call SetSkipIntroFlagsFemale
-	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
+	@ setdynamicwarp MAP_LITTLEROOT_TOWN, 10, 0
+	setdynamicwarp MAP_ROUTE101, 11, 18
 	releaseall
 	end
 
@@ -65,6 +67,7 @@ SetSkipIntroFlags::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
+    setvar VAR_ROUTE101_STATE, 1
     return
 
 SetSkipIntroFlagsMale::
