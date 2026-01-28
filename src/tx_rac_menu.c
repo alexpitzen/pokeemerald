@@ -1046,7 +1046,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
                
 
         sOptions = AllocZeroed(sizeof(*sOptions));
-        sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = TRUE;
         sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]                    = gSaveBlock1Ptr->tx_Random_Starter;
         sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]                  = gSaveBlock1Ptr->tx_Random_WildPokemon;
         sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]                    = gSaveBlock1Ptr->tx_Random_Trainer;

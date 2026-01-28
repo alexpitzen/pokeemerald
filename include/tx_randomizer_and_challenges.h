@@ -3,10 +3,10 @@
 //tx_randomizer_and_challenges
 
 // default options set by the dev
-#define TX_RANDOM_STARTER               FALSE
-#define TX_RANDOM_WILD_POKEMON          FALSE
-#define TX_RANDOM_TRAINER               FALSE
-#define TX_RANDOM_STATIC                FALSE
+#define TX_RANDOM_STARTER               TRUE
+#define TX_RANDOM_WILD_POKEMON          TRUE
+#define TX_RANDOM_TRAINER               TRUE
+#define TX_RANDOM_STATIC                TRUE
 #define TX_RANDOM_SIMILAR               TRUE
 #define TX_RANDOM_MAP_BASED             TRUE
 #define TX_RANDOM_INCLUDE_LEGENDARIES   FALSE
@@ -16,7 +16,7 @@
 // #define TX_RANDOM_EVOLUTION             FALSE
 // #define TX_RANDOM_EVOLUTION_METHODE     FALSE
 // #define TX_RANDOM_TYPE_EFFECTIVENESS    FALSE
-#define TX_RANDOM_ITEMS                 FALSE
+#define TX_RANDOM_ITEMS                 TRUE
 // #define TX_RANDOM_CHAOS_MODE            FALSE
 // #define TX_RANDOM_ONE_FOR_ONE           FALSE //not yet implemented in menu
 
