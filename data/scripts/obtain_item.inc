@@ -1,9 +1,12 @@
 .set ITEMID, VAR_0x8000
 .set AMOUNT, VAR_0x8001
+.set NORANDOM, VAR_0x8002
 
 Std_ObtainItem::
+    goto_if_eq NORANDOM, TRUE, skip_random
 	specialvar VAR_RESULT, IsRandomItemsActivated
 	call_if_eq VAR_RESULT, TRUE, Std_RandomItem
+skip_random::
 	copyvar VAR_0x8006, ITEMID
 	additem ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT

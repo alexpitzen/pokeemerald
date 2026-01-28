@@ -335,8 +335,7 @@ MauvilleCity_Gym_Text_AngeloPostBattle:
 MauvilleCity_Gym_Text_WattsonIntro:
 	.string "I HAVE A SERIOUS QUESTION.\p"
 	.string "IT'S BEEN KEEPING ME UP AT NIGHT.\p"
-	.string "Does the existence of Magneton\n"
-	.string "imply the existence of Magnetoff?$"
+	.string "If Magneton, why no Magnetoff?$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
 	.string "Wahahahah!\n"
