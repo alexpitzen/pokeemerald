@@ -1143,7 +1143,6 @@ static void Task_OptionMenuFadeIn(u8 taskId)
 
 static void Task_OptionMenuProcessInput(u8 taskId)
 {
-    int i, scrollCount = 0, itemsToRedraw;
     if (JOY_NEW(A_BUTTON))
     {
         if (sOptions->menuCursor[sOptions->submenu] == MenuItemCancel())
@@ -1300,6 +1299,22 @@ static void Task_OptionMenuProcessInput(u8 taskId)
         
         DrawTopBarText();
         ReDrawAll();
+        HighlightOptionMenuItem();
+        DrawDescriptionText();
+    }
+    else if (JOY_NEW(START_BUTTON))
+    {
+        sOptions->submenu = MENU_COUNT - 1;
+        DrawTopBarText();
+        ReDrawAll();
+        HighlightOptionMenuItem();
+        DrawDescriptionText();
+
+        sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
+        ScrollAll(0);
+        sOptions->visibleCursor[sOptions->submenu] = 4;
+        sOptions->menuCursor[sOptions->submenu] = MenuItemCount() - 1;
+
         HighlightOptionMenuItem();
         DrawDescriptionText();
     }
