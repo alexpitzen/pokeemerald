@@ -91,8 +91,8 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
         ZeroEnemyPartyMons();
-        u16 species = GetSpeciesRandomSeeded(SPECIES_ZIGZAGOON, TX_RANDOM_T_TRAINER, 0);
-        CreateMon(&gEnemyParty[0], species, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        u16 species = GetSpeciesRandomSeededWithVariance(SPECIES_ZIGZAGOON, TX_RANDOM_T_TRAINER, 0, 1200);
+        CreateMon(&gEnemyParty[0], species, 5, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }

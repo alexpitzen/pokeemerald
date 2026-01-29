@@ -1310,8 +1310,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
         HighlightOptionMenuItem();
         DrawDescriptionText();
 
-        sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
-        ScrollAll(0);
+        if (sOptions->visibleCursor[sOptions->submenu] == sOptions->menuCursor[sOptions->submenu]) {
+            sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
+            ScrollAll(0);
+        }
+        else {
+            sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
+        }
         sOptions->visibleCursor[sOptions->submenu] = 4;
         sOptions->menuCursor[sOptions->submenu] = MenuItemCount() - 1;
 
