@@ -477,7 +477,7 @@ u8 PickWildMonNature(void)
     return Random() % NUM_NATURES;
 }
 
-void CreateWildMon(u16 species, u8 level)
+void CreateWildMonWithOffset(u16 species, u8 level, u16 offset)
 {
     bool32 checkCuteCharm = TRUE;
 
@@ -486,7 +486,7 @@ void CreateWildMon(u16 species, u8 level)
     // tx_randomizer
     if (gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
+        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, offset);
     }
 
     switch (gSpeciesInfo[species].genderRatio)
@@ -519,6 +519,11 @@ void CreateWildMon(u16 species, u8 level)
 
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
 }
+
+void CreateWildMon(u16 species, u8 level) {
+    return CreateWildMonWithOffset(species, level, 0);
+}
+
 #ifdef BUGFIX
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)
 #else
@@ -590,7 +595,7 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
     u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
 
     UpdateChainFishingStreak();
-    CreateWildMon(wildMonSpecies, level);
+    CreateWildMonWithOffset(wildMonSpecies, level, (rod + 1) << 7);
     return wildMonSpecies;
 }
 
