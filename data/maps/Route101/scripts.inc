@@ -21,6 +21,8 @@ Route101_EventScript_StartBirchRescue::
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonLeft1
+	waitmovement 0
 	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 15
 	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 0, 16
 	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
@@ -78,6 +80,10 @@ Route101_Movement_PreventExitWest:
 
 Route101_Movement_PreventExitNorth:
 	walk_down
+	step_end
+
+Route101_Movement_ZigzagoonLeft1:
+	walk_fast_left
 	step_end
 
 Route101_Movement_ZigzagoonChaseInCircles:
