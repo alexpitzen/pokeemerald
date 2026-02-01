@@ -2442,7 +2442,7 @@ static const u16 sRandomSpeciesAllBst[] =
     // SPECIES_ETERNATUS_ETERNAMAX,
 };
 
-EWRAM_DATA static u16 sRandomSpeciesAllMap[RANDOM_SPECIES_ALL_COUNT] = {0};
+EWRAM_DATA static u16 sRandomSpeciesAllMap[NUM_SPECIES] = {0};
 EWRAM_DATA static bool8 bRandomSpeciesAllMapIsSetup = FALSE;
 static void SetUpSpeciesAllLookup() {
     if (bRandomSpeciesAllMapIsSetup != TRUE) {
@@ -2451,6 +2451,12 @@ static void SetUpSpeciesAllLookup() {
             sRandomSpeciesAllMap[sRandomSpeciesAllBst[i]] = i;
         }
         bRandomSpeciesAllMapIsSetup = TRUE;
+        #ifndef NDEBUG
+        for (u16 i = 0; i < RANDOM_SPECIES_ALL_COUNT; ++i)
+        {
+            DebugPrintf("%d", sRandomSpeciesAllMap[i]);
+        }
+        #endif
     }
 }
 
@@ -7913,7 +7919,7 @@ static const u16 sRandomSpeciesWildBst[] =
     SPECIES_SLAKING,
 };
 
-EWRAM_DATA static u16 sRandomSpeciesWildMap[RANDOM_SPECIES_WILD_COUNT] = {0};
+EWRAM_DATA static u16 sRandomSpeciesWildMap[NUM_SPECIES] = {0};
 EWRAM_DATA static bool8 bRandomSpeciesWildMapIsSetup = FALSE;
 void SetUpSpeciesWildLookup() {
     if (bRandomSpeciesWildMapIsSetup != TRUE) {
@@ -17626,12 +17632,35 @@ static u16 GetRandomSpeciesWithVariance(u16 species, u8 mapBased, u8 type, u16 a
                     numMons = RANDOM_SPECIES_ALL_COUNT;
                     SetUpSpeciesAllLookup();
                     speciesIndex = sRandomSpeciesAllMap[species];
+                    if (species != sRandomSpeciesAllBst[speciesIndex])
+                    {
+                        #ifndef NDEBUG
+                        DebugPrintf("******** sRandomSpeciesAllBst or sRandomSpeciesAllMap corrupted");
+                        DebugPrintf("species(%S) AllIndex(%d) speciesAtAllIndex(%S)", GetSpeciesName(species), speciesIndex, GetSpeciesName(sRandomSpeciesAllBst[speciesIndex]));
+                        for(u16 i = 0; i < RANDOM_SPECIES_ALL_COUNT; i++) {
+                            DebugPrintf("%S", GetSpeciesName(sRandomSpeciesAllBst[i]));
+                        }
+                        DebugPrintf("********************");
+                        DebugPrintf("********************");
+                        for (u16 i = 0; i < RANDOM_SPECIES_ALL_COUNT; ++i)
+                        {
+                            DebugPrintf("%d", sRandomSpeciesAllMap[i]);
+                        }
+                        #endif
+                    }
                 }
                 break;
             case TX_RANDOM_T_WILD_POKEMON:
                 numMons = RANDOM_SPECIES_WILD_COUNT;
                 SetUpSpeciesWildLookup();
                 speciesIndex = sRandomSpeciesWildMap[species];
+                if (species != sRandomSpeciesWildBst[speciesIndex])
+                {
+                    #ifndef NDEBUG
+                    DebugPrintf("******** sRandomSpeciesWildBst or sRandomSpeciesWildMap corrupted");
+                    DebugPrintf("species(%S) WildIndex(%d) speciesAtWildIndex(%S)", GetSpeciesName(species), speciesIndex, GetSpeciesName(sRandomSpeciesWildBst[speciesIndex]));
+                    #endif
+                }
                 break;
             default:
                 #ifndef NDEBUG
@@ -17685,7 +17714,7 @@ static u16 GetRandomSpeciesWithVariance(u16 species, u8 mapBased, u8 type, u16 a
         // }
 
         #ifndef NDEBUG
-        DebugPrintf("%S: species=%d=%S; mapBased=%d; speciesResult=%d=%S", gRandomizationTypes[type], species, GetSpeciesName(species), mapBased, speciesResult, GetSpeciesName(speciesResult));
+        DebugPrintf("%S: name (bst) index: %S (%d) %d -> %S (%d) %d", gRandomizationTypes[type], GetSpeciesName(species), sSpeciesAllBst[species], speciesIndex, GetSpeciesName(speciesResult), sSpeciesAllBst[speciesResult], index);
         #endif
 
         return speciesResult;
